@@ -25,6 +25,9 @@ class AccountViewController: UIViewController {
     }
 	
 	@IBAction func loginButtonTap(_ sender: UIButton) {
+        let loginVC = LoginViewController(nibName: "LoginViewController", bundle: .main)
+        loginVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(loginVC, animated: true)
 	}
 	
 }
