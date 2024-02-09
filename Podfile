@@ -9,6 +9,7 @@ target 'JetDevsHomeWork' do
   pod 'Kingfisher'
   pod 'SnapKit'
   pod 'MaterialComponents/TextControls+OutlinedTextFields'
+  pod 'RxCocoa'
 
   target 'JetDevsHomeWorkTests' do
     inherit! :search_paths
