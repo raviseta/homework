@@ -17,10 +17,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     
     var disposeBag = DisposeBag()
-    
+    var viewModel: LoginViewModel
+
     // MARK: - Init methods
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        viewModel = LoginViewModel()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -43,6 +45,9 @@ class LoginViewController: UIViewController {
         setLoginBtnEnable()
         
         navigationItems()
+        
+        self.txtEmail.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        self.txtPassword.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     private func setLoginBtnEnable() {
@@ -75,4 +80,11 @@ extension LoginViewController {
     @objc private func rightButtonAction(sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
     }
+}
+
+extension LoginViewController {
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        self.setLoginBtnEnable()
+     }
 }
