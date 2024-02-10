@@ -22,7 +22,7 @@ class APIManager {
                     if let urlResponse = response as? HTTPURLResponse {
                         let headers = urlResponse.allHeaderFields
                         if let XAccToken = headers["X-Acc"] as? String {
-                            // TODO: - Store X-Acc token in userdefault.
+                            accessToken = XAccToken
                         }
                     }
                     
@@ -53,4 +53,3 @@ class APIManager {
         return request
     }
 }
-

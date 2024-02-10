@@ -55,7 +55,7 @@ class LoginViewModel {
         loginObservable
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { loginResponse in
-                //TODO: - Handle response here
+                saveUserData(userData: loginResponse)
             }, onError: { error in
                 self.showError?(error.localizedDescription)
             }, onCompleted: {

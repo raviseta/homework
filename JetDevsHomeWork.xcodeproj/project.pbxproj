@@ -55,6 +55,7 @@
 		AC6575022B773535000DF79A /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6575012B773535000DF79A /* Encodable+Extension.swift */; };
 		AC6575042B77359F000DF79A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6575032B77359F000DF79A /* UIViewController+Extension.swift */; };
 		AC6575062B77360C000DF79A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6575052B77360C000DF79A /* LoginResponse.swift */; };
+		AC6575082B773782000DF79A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6575072B773782000DF79A /* UserDefaults.swift */; };
 		DD9CD5C395D5FAE03F59B68E /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FFF8B3EB514C818C31135B /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,7 @@
 		AC6575012B773535000DF79A /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		AC6575032B77359F000DF79A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		AC6575052B77360C000DF79A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		AC6575072B773782000DF79A /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		B2FFF8B3EB514C818C31135B /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EC5ABA8B83EB7FC725CD65 /* Pods-JetDevsHomeWorkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetDevsHomeWorkTests.release.xcconfig"; path = "Target Support Files/Pods-JetDevsHomeWorkTests/Pods-JetDevsHomeWorkTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB6150528480C26B23B54A3E /* Pods-JetDevsHomeWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetDevsHomeWork.debug.xcconfig"; path = "Target Support Files/Pods-JetDevsHomeWork/Pods-JetDevsHomeWork.debug.xcconfig"; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 			children = (
 				AC5722112B769E4000DA547F /* ErrorMessages.swift */,
 				AC5722182B76A00900DA547F /* APIEndPoint.swift */,
+				AC6575072B773782000DF79A /* UserDefaults.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				AC5722122B769E4000DA547F /* ErrorMessages.swift in Sources */,
 				4E677BFF272B8319006E325E /* BaseTabBarController.swift in Sources */,
 				4E677C10272B8455006E325E /* AccountViewController.swift in Sources */,
+				AC6575082B773782000DF79A /* UserDefaults.swift in Sources */,
 				AC6575022B773535000DF79A /* Encodable+Extension.swift in Sources */,
 				AC5722092B7697BF00DA547F /* UIColor+Extension.swift in Sources */,
 				AC5722072B76973F00DA547F /* UIButton+Extension.swift in Sources */,
