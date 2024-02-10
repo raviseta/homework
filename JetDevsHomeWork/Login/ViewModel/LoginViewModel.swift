@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol LoginViewModelProtocol {
     
@@ -17,8 +18,13 @@ class LoginViewModel {
     // MARK: - Properties
 
     var showError: ((String) -> Void)?
-    
-    init() {
+    private let apiManager: APIManager
+    private let disposeBag = DisposeBag()
+
+    // MARK: - Init Method
+
+    init(apiManager: APIManager) {
+        self.apiManager = apiManager
     }
     
     func validateLoginInput(input: LoginInput) -> LoginValidationError? {
@@ -37,8 +43,25 @@ class LoginViewModel {
         if password.isEmpty {
             return .emptyPassword
         }
-
         return nil
+    }
+    
+    // MARK: - Login API call
+
+    func doLogin(input: LoginInput) {
+        
+        let loginObservable: Observable<LoginResponse> = self.apiManager.request(endPoint: .login, requestParameter: input)
+        
+        loginObservable
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { loginResponse in
+                //TODO: - Handle response here
+            }, onError: { error in
+                self.showError?(error.localizedDescription)
+            }, onCompleted: {
+            // TODO: - Redirect to next screen
+            })
+            .disposed(by: disposeBag)
     }
     
 }

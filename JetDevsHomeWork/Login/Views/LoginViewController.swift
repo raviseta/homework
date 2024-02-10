@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     // MARK: - Init methods
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        viewModel = LoginViewModel()
+        viewModel = LoginViewModel(apiManager: APIManager())
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -83,6 +83,22 @@ extension LoginViewController {
 }
 
 extension LoginViewController {
+    
+    @IBAction func btnLoginAction(_ sender: Any) {
+        
+        let loginInput = LoginInput(email: txtEmail.text ?? "", password: txtPassword.text ?? "")
+        let isValidated = viewModel.validateLoginInput(input: loginInput)
+        
+        guard isValidated == nil else {
+            showAlert(message: isValidated?.errorMessage)
+            return
+        }
+        viewModel.doLogin(input: loginInput)
+        
+        viewModel.showError = { [weak self] errorMessage in
+            self?.showAlert(message: errorMessage)
+        }
+    }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
         self.setLoginBtnEnable()
