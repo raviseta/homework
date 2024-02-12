@@ -98,6 +98,10 @@ extension LoginViewController {
         viewModel.showError = { [weak self] errorMessage in
             self?.showAlert(message: errorMessage)
         }
+        
+        viewModel.onSuccess = {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {

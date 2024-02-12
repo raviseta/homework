@@ -11,15 +11,19 @@ import RxSwift
 protocol LoginViewModelProtocol {
     
     var showError: ((String) -> Void)? { get set }
+    var onSuccess: (() -> Void)? { get set }
+
 }
 
 class LoginViewModel {
     
     // MARK: - Properties
 
-    var showError: ((String) -> Void)?
     private let apiManager: APIManager
     private let disposeBag = DisposeBag()
+    
+    var onSuccess: (() -> Void)?
+    var showError: ((String) -> Void)?
 
     // MARK: - Init Method
 
@@ -59,6 +63,7 @@ class LoginViewModel {
             }, onError: { error in
                 self.showError?(error.localizedDescription)
             }, onCompleted: {
+                self.onSuccess?()
             // TODO: - Redirect to next screen
             })
             .disposed(by: disposeBag)
