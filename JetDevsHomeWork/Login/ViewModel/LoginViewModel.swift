@@ -15,7 +15,7 @@ protocol LoginViewModelProtocol {
 
 }
 
-class LoginViewModel {
+class LoginViewModel: LoginViewModelProtocol {
     
     // MARK: - Properties
 
